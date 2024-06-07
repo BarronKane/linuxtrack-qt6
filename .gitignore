@@ -1,0 +1,5 @@
+# Supporting the automake->CMake transition.
+autom4te.cache/
+
+# CMake
+build/
