@@ -1,7 +1,7 @@
 project(linuxtrack)
-cmake_minimum_required(VERSION 3.6)
-add_subdirectory(src)
+cmake_minimum_required(VERSION 3.19) # First to support Apple Silicon.
 
+include(GenerateExportHeader)
 include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
