@@ -37,3 +37,17 @@ else()
     set(FT_LDFLAGS "-Wl,-rpath,$(libdir)")
 endif()
 
+set(LINUXTRACK_SOURCES
+    config_test.h # To be refactored out
+    linuxtrack.h utils.h ipc_utils.h ltlib.h
+    ltlib.c utils.c ipc_utils.c
+)
+
+add_library(linuxtrack STATIC
+    ${LINUXTRACK_SOURCES}
+)
+
+target_compile_definitions(linuxtrack PUBLIC
+    LIB_PATH="${PROJECT_BINARY_DIR}"
+)
+
