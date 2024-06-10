@@ -4,7 +4,7 @@ set(LINUXTRACK ${PROJECT_NAME} CACHE INTERNAL "LINUXTRACK")
 # For now all I'm going to try to do is simply replicate, instruction-by-instrution,
 # all of the tasks implemented in autotools. 
 
-if(CMAKE_SYSTEM_NAME STREQAL "Darwin")
+if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     set(SLEOPARD_LDFLAG "-headerpad_max_install_names")
     set(DARWINFLAGS "-undefined dynamic_lookup")
     set(SYSFLAGS "-DIBM=0 -DAPL=1 -DLIN=0")

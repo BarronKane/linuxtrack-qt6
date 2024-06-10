@@ -1,5 +1,5 @@
-project(linuxtrack)
 cmake_minimum_required(VERSION 3.19) # First to support Apple Silicon.
+project(linuxtrack)
 
 include(GenerateExportHeader)
 include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
@@ -34,8 +34,6 @@ define_property(
 )
 
 message("Building with CMake version: ${CMAKE_VERSION}")
-
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 
 add_subdirectory_with_folder("linuxtrack" src/linuxtrack)
 
