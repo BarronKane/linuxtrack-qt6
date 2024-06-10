@@ -33,5 +33,9 @@ define_property(
     FULL_DOCS  "Use to organize targets in an IDE."
 )
 
+message("Building with CMake version: ${CMAKE_VERSION}")
+
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+
 add_subdirectory_with_folder("linuxtrack" src/linuxtrack)
 
