@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19) # First to support Apple Silicon.
-project(linuxtrack)
+project(linuxtrack C CXX)
 
 include(GenerateExportHeader)
 include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
@@ -19,6 +19,8 @@ endif(WIN32)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF) # -std=c++xx instead of -std=gnu++xx
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # Platform agnostic installation trees.
 include(GNUInstallDirs)
