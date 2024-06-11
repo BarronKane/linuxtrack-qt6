@@ -1,7 +1,7 @@
 #ifdef HAVE_CONFIG_H
   #include <config.h>
 #endif
-#include <config_test.h>
+#include <config_test.h> // TODO: Refactor out.
 
 #ifndef _GNU_SOURCE
   #define _GNU_SOURCE

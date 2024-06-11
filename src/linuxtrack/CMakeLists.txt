@@ -13,7 +13,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     # in the main thread. Linking ltr_server against CoreFoundation solves that.
     set(LTR_SERVER_FLAGS "-framework CoreFoundation")
     set(QMAKE_FLAGS "-spec macx-g++")
-    set(LIBLINUXTRACK_FLAGS "-fpic -fPIC -arch i386 -arch x86_64")
+    set(LIBLINUXTRACK_FLAGS "-arch i386 -arch x86_64")
     set(XLINUXTRACK_CFLAGS "-arch i386 -arch x86_64")
     set(XLINUXTRACK_LDFLAGS "-Wl,-no_arch_warnings -arch i386 -arch x86_64")
     set(LINUXFLAGS "")
@@ -27,7 +27,7 @@ else()
 
     set(SYSFLAGS "-DIBM=0 -DAPL=0 -DLIN=1")
     set(QMAKE_FLAGS "-spec linux-g++")
-    set(LIBLINUXTRACK_FLAGS "-fpic -fPIC")
+    set(LIBLINUXTRACK_FLAGS "")
     set(LTR_SERVER_FLAGS "")
     set(XLINUXTRACK_CFLAGS "")
     set(XLINUXTRACK_LDFLAGS "-L/lib32 -L/usr/lib32 -Wl,--no-warn-search-mismatch")
@@ -37,17 +37,7 @@ else()
     set(FT_LDFLAGS "-Wl,-rpath,$(libdir)")
 endif()
 
-set(LINUXTRACK_SOURCES
-    config_test.h # To be refactored out
-    linuxtrack.h utils.h ipc_utils.h ltlib.h
-    ltlib.c utils.c ipc_utils.c
-)
+add_subdirectory_with_folder("utils" utils)
+add_subdirectory_with_folder("linuxtrack" linuxtrack)
 
-add_library(linuxtrack STATIC
-    ${LINUXTRACK_SOURCES}
-)
-
-target_compile_definitions(linuxtrack PUBLIC
-    LIB_PATH="${PROJECT_BINARY_DIR}"
-)
 
