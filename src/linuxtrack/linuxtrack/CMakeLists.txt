@@ -34,3 +34,7 @@ target_compile_features(${PROJECT_NAME} PUBLIC
 target_compile_options(${PROJECT_NAME} PUBLIC
     ${LIBLINUXTRACK_FLAGS} ${LINUXFLAGS}
 )
+
+target_link_libraries(${PROJECT_NAME}
+    ltr
+)

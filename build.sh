@@ -8,20 +8,23 @@ mkdir -p build/
 
 source $(pwd)/env/bin/activate
 
-# Release
-rtc=-DCMAKE_TOOLCHAIN_FILE=./Release/generators/conan_toolchain.cmake
-# Debug
-dtc=-DCMAKE_TOOLCHAIN_FILE=./Debug/generators/conan_toolchain.cmake
+build_type=Debug # SET BUILD TYPE HERE
 
-build_type=$dtc # MATCH SET BUILD TYPE HERE
+if [ "$build_type" -eq 'Debug' ]; then
+	toolchain=-DCMAKE_TOOLCHAIN_FILE=./Debug/generators/conan_toolchain.cmake
+fi
 
-conan install . --build missing -s build_type=Debug # SET BUILT TYPE HERE
+if [ "$build_type" -eq "Release" ]; then
+	toolchain=-DCMAKE_TOOLCHAIN_FILE=./Release/generators/conan_toolchain.cmake
+fi
+
+conan install . --build missing -s build_type=$build_type
 pushd build/
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	cmake .. -G "Xcode" $build_type 
+	cmake .. -G "Xcode" $toolchain -DCMAKE_BUILD_TYPE=$build_type
 else
-	cmake .. $build_type
+	cmake .. $toolchain -DCMAKE_BUILD_TYPE=$build_type
 fi
 
 cmake --build .

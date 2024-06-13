@@ -37,5 +37,8 @@ define_property(
 
 message("Building with CMake version: ${CMAKE_VERSION}")
 
+find_package(Qt6 COMPONENTS Core REQUIRED CONFIG)
+
+
 add_subdirectory_with_folder("linuxtrack" src/linuxtrack)
 

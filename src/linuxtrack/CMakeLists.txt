@@ -39,5 +39,6 @@ endif()
 
 add_subdirectory_with_folder("utils" utils)
 add_subdirectory_with_folder("linuxtrack" linuxtrack)
+add_subdirectory_with_folder("linuxtrack" ltr)
 
 
