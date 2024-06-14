@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.19) # First to support Apple Silicon.
 project(linuxtrack C CXX)
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_BINARY_DIR}/generators/conan_toolchain.cmake)
+set(CMAKE_PREFIX_PATH "${CMAKE_CURRENT_BINARY_DIR}/generators/")
 
 include(GenerateExportHeader)
 include(${CMAKE_SOURCE_DIR}/cmake/helpers.cmake)
@@ -35,10 +37,11 @@ define_property(
     FULL_DOCS  "Use to organize targets in an IDE."
 )
 
-message("Building with CMake version: ${CMAKE_VERSION}")
+message(STATUS "Building with CMake version: ${CMAKE_VERSION}")
+message(STATUS "Using toolchain: ${CMAKE_TOOLCHAIN_FILE}")
 
+find_package(libusb REQUIRED CONFIG)
 find_package(Qt6 COMPONENTS Core REQUIRED CONFIG)
-
 
 add_subdirectory_with_folder("linuxtrack" src/linuxtrack)
 

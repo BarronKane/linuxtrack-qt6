@@ -37,8 +37,10 @@ else()
     set(FT_LDFLAGS "-Wl,-rpath,$(libdir)")
 endif()
 
-add_subdirectory_with_folder("utils" utils)
+add_subdirectory_with_folder("linuxtrack" utils)
 add_subdirectory_with_folder("linuxtrack" linuxtrack)
 add_subdirectory_with_folder("linuxtrack" ltr)
+add_subdirectory_with_folder("linuxtrack" fakeusb)
+add_subdirectory_with_folder("linuxtrack" usb1)
 
 

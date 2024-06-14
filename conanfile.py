@@ -16,6 +16,7 @@ class linuxtrackRecipe(ConanFile):
 
     # zstd feature for linux as the qttools recipe still looks for it even when disabled.
     def requirements(self):
+        self.requires("libusb/1.0.26")
         self.requires("qt/6.7.1", options={"with_zstd": True})
 
     def layout(self):
