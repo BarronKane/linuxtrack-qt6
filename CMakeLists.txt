@@ -41,6 +41,7 @@ message(STATUS "Building with CMake version: ${CMAKE_VERSION}")
 message(STATUS "Using toolchain: ${CMAKE_TOOLCHAIN_FILE}")
 
 find_package(libusb REQUIRED CONFIG)
+find_package(OpenCV COMPONENTS core imgproc REQUIRED CONFIG)
 find_package(Qt6 COMPONENTS Core REQUIRED CONFIG)
 
 add_subdirectory_with_folder("linuxtrack" src/linuxtrack)

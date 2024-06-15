@@ -33,6 +33,10 @@ target_compile_options(${PROJECT_NAME} PUBLIC
     ${LIBLINUXTRACK_FLAGS} ${LINUXFLAGS}
 )
 
+target_link_libraries(${PROJECT_NAME}
+    ltr
+)
+
 #target_compile_definitions(${PROJECT_NAME} PUBLIC
 #    LIB_PATH="${PROJECT_BINARY_DIR}"
 #)
