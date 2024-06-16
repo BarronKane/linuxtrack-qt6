@@ -14,6 +14,9 @@
 #include "digest.h"
 #include "utils.h"
 
+// Forward declaration.
+char* ltr_int_get_data_path(char[]);
+
 static const size_t sums_len = SHA_DIGEST_LENGTH + MD5_DIGEST_LENGTH;
 
 

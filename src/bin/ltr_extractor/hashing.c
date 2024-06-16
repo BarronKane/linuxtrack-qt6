@@ -22,6 +22,13 @@
 #include "utils.h"
 #include "extract.h"
 
+// Forward Declaration.
+void ltr_int_check_root();
+char* ltr_int_my_strdup(const char*);
+char* ltr_int_get_data_path(const char*);
+char* ltr_int_get_default_file_name(const char*);
+
+
 typedef struct{
   off_t length;
   unsigned char *data;
