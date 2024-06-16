@@ -35,6 +35,10 @@ target_compile_features(${PROJECT_NAME} PUBLIC
     
 )
 
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    linuxtrack-utils
+)
+
 target_compile_options(${PROJECT_NAME} PUBLIC
     ${LIBLINUXTRACK_FLAGS} ${LINUXFLAGS}
 )
