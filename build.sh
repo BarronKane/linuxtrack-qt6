@@ -18,7 +18,7 @@ build_type=Debug # SET BUILD TYPE HERE
 #	toolchain=-DCMAKE_TOOLCHAIN_FILE=./Release/generators/conan_toolchain.cmake
 #fi
 
-conan install . --build missing -s build_type=$build_type
+#conan install . --build missing -s build_type=$build_type
 pushd build/$build_type
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

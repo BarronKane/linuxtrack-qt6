@@ -13,8 +13,12 @@ add_subdirectory_with_folder("linuxtrack" tir)
 add_subdirectory_with_folder("linuxtrack" usb1)
 add_subdirectory_with_folder("linuxtrack" utils)
 add_subdirectory_with_folder("linuxtrack" wc)
-add_subdirectory_with_folder("linuxtrack" wii)
-add_subdirectory_with_folder("linuxtrack" xlinuxtrack9)
+
+# TODO: cwiid library.
+#add_subdirectory_with_folder("linuxtrack" wii)
+
+# TODO: Xplane SDK.
+#add_subdirectory_with_folder("linuxtrack" xlinuxtrack9)
 
 
 
