@@ -19,7 +19,7 @@ set(LTR_EXTRACTOR_C
     ${LTR_EXTRACTOR_S}
 )
 
-add_library(${PROJECT_NAME} STATIC
+add_executable(${PROJECT_NAME}
     ${LTR_EXTRACTOR_C}
 )
 

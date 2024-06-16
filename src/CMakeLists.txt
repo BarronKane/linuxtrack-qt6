@@ -1,5 +1,5 @@
-project(linuxtrack-libs)
-set(LINUXTRACK ${PROJECT_NAME} CACHE INTERNAL "LINUXTRACK")
+project(linuxtrack)
+set(LINUXTRACK ${PROJECT_NAME} CACHE INTERNAL "LINUXTRACK-LIBS")
 
 # For now all I'm going to try to do is simply replicate, instruction-by-instrution,
 # all of the tasks implemented in autotools. 
@@ -37,24 +37,5 @@ else()
     set(FT_LDFLAGS "-Wl,-rpath,$(libdir)")
 endif()
 
-add_subdirectory_with_folder("linuxtrack" fakeusb)
-add_subdirectory_with_folder("linuxtrack" ft)
-add_subdirectory_with_folder("linuxtrack" joy)
-add_subdirectory_with_folder("linuxtrack" linuxtrack)
-add_subdirectory_with_folder("linuxtrack" ltr)
-add_subdirectory_with_folder("linuxtrack" ltr_extractor)
-add_subdirectory_with_folder("linuxtrack" ltr_recenter)
-add_subdirectory_with_folder("linuxtrack" ltr_server1)
-add_subdirectory_with_folder("linuxtrack" macwc)
-add_subdirectory_with_folder("linuxtrack" macwii)
-add_subdirectory_with_folder("linuxtrack" osc_server)
-add_subdirectory_with_folder("linuxtrack" p3e)
-add_subdirectory_with_folder("linuxtrack" tir)
-add_subdirectory_with_folder("linuxtrack" usb1)
-add_subdirectory_with_folder("linuxtrack" utils)
-add_subdirectory_with_folder("linuxtrack" wc)
-add_subdirectory_with_folder("linuxtrack" wii)
-add_subdirectory_with_folder("linuxtrack" xlinuxtrack9)
-
-
-
+add_subdirectory_with_folder("linuxtrack" lib)
+add_subdirectory_with_folder("linuxtrack" bin)
