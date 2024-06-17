@@ -1,5 +1,14 @@
 cmake_minimum_required(VERSION 3.19) # First to support Apple Silicon.
 project(linuxtrack C CXX)
+
+# Don't allow source tree pollution.
+if(" ${CMAKE_SOURCE_DIR}" STREQUAL " ${CMAKE_BINARY_DIR}")
+  message(FATAL_ERROR "
+FATAL: In-source builds are not allowed.
+       You should create a separate directory for build files.
+")
+endif()
+
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_BINARY_DIR}/generators/conan_toolchain.cmake)
 set(CMAKE_PREFIX_PATH "${CMAKE_CURRENT_BINARY_DIR}/generators/")
 
