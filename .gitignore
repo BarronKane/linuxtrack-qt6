@@ -1,6 +1,9 @@
 # Supporting the automake->CMake transition.
 autom4te.cache/
 
+# IDEs
+.idea/
+
 # VSCode
 .vscode/
 
